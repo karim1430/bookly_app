@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/home/presentation/views/widgets/feature_list_view_item.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/feature_book_item.dart';
 import 'package:flutter/material.dart';
 
 class FeatureBooksListView extends StatelessWidget {
@@ -11,7 +11,7 @@ class FeatureBooksListView extends StatelessWidget {
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return FeatureListViewItem();
+            return FeatureBookItem();
           }),
     );
   }

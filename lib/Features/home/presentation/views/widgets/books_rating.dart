@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/style.dart';
 
 class BooksRating extends StatelessWidget {
-  const BooksRating({super.key});
-
+  const BooksRating({super.key, this.mainAxisAlignment});
+  final MainAxisAlignment? mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 20),
       child: Row(
+        mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
         children: [
           const Icon(
             Icons.star,
