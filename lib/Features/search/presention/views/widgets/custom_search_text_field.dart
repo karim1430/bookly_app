@@ -7,6 +7,7 @@ class CustomSearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
+          suffixIcon: IconButton(onPressed: () {}, icon: Icon(Icons.search)),
           label: Text('Search'),
           hintText: 'Inter Name Book',
           enabledBorder: methodOutlineBorder(),
