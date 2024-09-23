@@ -25,7 +25,7 @@ class BestSellerListViewItem extends StatelessWidget {
             SizedBox(
               height: 150,
               child: AspectRatio(
-                aspectRatio: 2 / 4,
+                aspectRatio: 2.2 / 4,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),

@@ -3,21 +3,32 @@ import 'package:flutter/material.dart';
 import '../utils/style.dart';
 
 class CustomButtom extends StatelessWidget {
-  const CustomButtom({super.key});
-
+  const CustomButtom(
+      {super.key,
+      required this.backgroundColor,
+      required this.textColor,
+      this.borderRadius,
+      required this.text});
+  final Color backgroundColor;
+  final Color textColor;
+  final BorderRadius? borderRadius;
+  final String text;
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {},
-      child: Text(
-        '19.99€',
-        style: Style.textStyle18,
-      ),
-      style: TextButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+    return SizedBox(
+      height: 48,
+      child: TextButton(
+        onPressed: () {},
+        child: Text(
+          text,
+          style: Style.textStyle16.copyWith(color: textColor),
         ),
-        backgroundColor: Colors.white,
+        style: TextButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: borderRadius ?? BorderRadius.circular(12),
+          ),
+          backgroundColor: backgroundColor,
+        ),
       ),
     );
   }

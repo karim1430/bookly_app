@@ -9,10 +9,10 @@ class FeatureBookItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 6, right: 6),
       child: AspectRatio(
-        aspectRatio: 2.2 / 4,
+        aspectRatio: 2.5 / 4,
         child: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(12),
               image: DecorationImage(
                   image: NetworkImage(AssetsData.testImage), fit: BoxFit.fill)),
         ),
