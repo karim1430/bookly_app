@@ -1,4 +1,3 @@
-
 import 'package:bookly_app/Features/home/presentation/views/widgets/books_details_section.dart';
 
 import 'package:bookly_app/Features/home/presentation/views/widgets/similar_books_section.dart';
