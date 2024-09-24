@@ -10,9 +10,9 @@ class FeatureNewestCubit extends Cubit<FeatureNewestState> {
   FeatureNewestCubit(this.homeRepo) : super(FeatureNewestInitial());
 
   final HomeRepo homeRepo;
-  Future<void> fetchFeatureBooks() async {
+  Future<void> fetchNewestBooks() async {
     emit(FeatureNewestInitial());
-    var result = await homeRepo.fetchFeatureBooks();
+    var result = await homeRepo.fetchNewestBooks();
 
     result.fold(
       (failure) {

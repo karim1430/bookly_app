@@ -22,7 +22,10 @@ class BooksDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: width * .22,
           ),
-          child: FeatureBookItem(),
+          child: FeatureBookItem(
+            imageUrl:
+                'https://www.ala.org/sites/default/files/2024-04/oif-bbw24-LOGO-1160-840.png',
+          ),
         ),
         const SizedBox(
           height: 40,
