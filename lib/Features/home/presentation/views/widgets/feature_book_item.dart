@@ -1,6 +1,9 @@
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../../../../core/utils/app_route.dart';
 
 class FeatureBookItem extends StatelessWidget {
   const FeatureBookItem({super.key, required this.imageUrl});
@@ -17,7 +20,8 @@ class FeatureBookItem extends StatelessWidget {
               fit: BoxFit.fill,
               imageUrl: imageUrl,
               errorWidget: (context, url, error) => const Icon(Icons.error),
-              progressIndicatorBuilder: (context, url, progress) => Center(
+              progressIndicatorBuilder: (context, url, progress) =>
+                  const Center(
                 child: RefreshProgressIndicator(),
               ),
             ),

@@ -5,7 +5,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/style.dart';
 
 class BookListViewItem extends StatelessWidget {
@@ -18,7 +17,7 @@ class BookListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRoute.kBookDetailsView);
+        GoRouter.of(context).push(AppRoute.kBookDetailsView, extra: bookModel);
       },
       child: Padding(
         padding: const EdgeInsets.only(left: 30, right: 40, bottom: 20),

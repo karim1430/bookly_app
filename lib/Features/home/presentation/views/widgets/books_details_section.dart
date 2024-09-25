@@ -1,3 +1,4 @@
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/books_action.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/books_rating.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
@@ -7,14 +8,14 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/style.dart';
 
 class BooksDetailsSection extends StatelessWidget {
-  const BooksDetailsSection({super.key});
-
+  const BooksDetailsSection({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     return Column(
       children: [
-        CustomBookdetailsAppBar(),
+        const CustomBookdetailsAppBar(),
         const SizedBox(
           height: 36,
         ),
@@ -23,34 +24,38 @@ class BooksDetailsSection extends StatelessWidget {
             horizontal: width * .22,
           ),
           child: FeatureBookItem(
-            imageUrl:
-                'https://www.ala.org/sites/default/files/2024-04/oif-bbw24-LOGO-1160-840.png',
+            imageUrl: book.volumeInfo.imageLinks.thumbnail,
           ),
         ),
         const SizedBox(
           height: 40,
         ),
-        const Text(
-          'The Jungle Book',
+        Text(
+          book.volumeInfo.title!,
           style: Style.textStyle30,
+          textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 5,
         ),
-        const Opacity(
+        Opacity(
           opacity: 0.7,
           child: Text(
-            'Rudyard Kipling',
+            book.volumeInfo.authors![0],
             style: Style.textStyle18,
           ),
         ),
         const SizedBox(
           height: 14,
         ),
-        const BooksRating(
+        BooksRating(
           mainAxisAlignment: MainAxisAlignment.center,
-          ratingAverage: '4.8',
-          ratingCount: '(3132)',
+          ratingAverage: book.volumeInfo.averageRating == null
+              ? '0'
+              : book.volumeInfo.averageRating.toString(),
+          ratingCount: book.volumeInfo.ratingsCount == null
+              ? '0'
+              : book.volumeInfo.ratingsCount.toString(),
         ),
         const SizedBox(
           height: 30,
