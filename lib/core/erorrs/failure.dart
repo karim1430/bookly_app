@@ -40,7 +40,8 @@ class ServiceFailure extends Failure {
     } else if (statusCode == 500) {
       return ServiceFailure('Internal Server error , please try later');
     } else {
-      return ServiceFailure('Oops there was an error , please try later');
+      return ServiceFailure(
+          'Oops there was an error , please try later${statusCode}');
     }
   }
 }
